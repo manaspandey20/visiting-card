@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Visiting Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      border-radius: 15px;
+      padding: 20px;
+      width: 350px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+      animation: rotate 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 10px;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin: 5px 0 15px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.2);
+    }
+
+    .contact-info {
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #4A5899;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-content">
+      <img src="https://avatars.githubusercontent.com/u/83280371?v=4" alt="Profile Picture" class="avatar">
+      <h2>Manas Pandey</h2>
+      <h3>Front-End Developer</h3>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:manaspandey.20feb@gmail.com">manaspandey.20feb@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919935151439">+91 9935151439</a></p>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/manaspandey20/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/manaspandey20" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/manaspandey20/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/manaspandey20/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
